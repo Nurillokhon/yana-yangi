@@ -14,7 +14,7 @@ const Navbar = () => {
       />
       <ul className="nav_ul">
         <li>Акции</li>
-        <li>Каталог</li>
+        <li><a href="#cotolog">Каталог</a> </li>
         <li>Доставка</li>
         <li>О магазине</li>
         <li>Блог</li>

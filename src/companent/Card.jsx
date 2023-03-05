@@ -44,7 +44,7 @@ const Card = () => {
                   className=" mx-3 card p-3 shadow "
                   style={{ border: "none" }}
                 >
-                  <Link to={`/card2/${item.id}`}>
+                  <Link to={`/more/${item.id}/${item.NameBook}`}>
                     <img
                       className="img_book"
                       src={
@@ -71,7 +71,7 @@ const Card = () => {
                         Korzinka
                       </button>
 
-                      <Link to={`/card2/${item.id}`}>
+                      <Link to={`/more/${item.id}/${item.NameBook}`}>
                         <button
                           style={{
                             backgroundColor: "rgb(225,106,0)",

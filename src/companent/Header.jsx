@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div>
       <div>
-      <div className="row row1  align-item-center">
+      <div className="row row1 g-0  align-item-center">
         <div className="col-6  col1">
           <h1 className="fw-bold">Bookstore</h1>
           <h6>The World Of Books. Book is a source of knowledge</h6>
