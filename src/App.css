@@ -129,3 +129,10 @@ li{
   padding-bottom: 20px;
   padding-top: 2px
 }
+
+.btn1{
+  transition: all ease-in-out .1s;
+}
+.btn1:hover{
+  background-color: green;
+}
