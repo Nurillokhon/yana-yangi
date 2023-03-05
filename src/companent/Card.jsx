@@ -18,19 +18,22 @@ const Card = () => {
         console.log(err);
       });
   }, []);
+  
 
   function like(index) {
     let current = [...mas];
 
     current[index].status = !current[index].status;
     setMas(current);
+    localStorage.setItem('count',JSON.stringify(current))
   }
 
   function korz(index) {
     let current = [...mas];
-
     current[index].status = !current[index].status;
+    localStorage.setItem('count',JSON.stringify(current))
   }
+
   return (
     <div className="d-flex justify-content-center">
       <div className="d-flex mainnn">
