@@ -3,7 +3,7 @@ import React from 'react';
 const Korzinka = () => {
     return (
         <div>
-            njdsbgh
+           korzinaga tushgan mahsulotlar
         </div>
     );
 }
