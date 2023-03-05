@@ -9,7 +9,7 @@ const Card = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.npoint.io/4ddb515a1fbdfe11397c")
+      .get("https://api.npoint.io/f6b5513c4c86229c5195")
       .then((ress) => {
         console.log(ress.data);
         setMas(ress.data);
@@ -19,19 +19,18 @@ const Card = () => {
       });
   }, []);
 
-
   function like(index) {
     let current = [...mas];
 
     current[index].status2 = !current[index].status2;
     setMas(current);
-    localStorage.setItem('count',JSON.stringify(current))
+    localStorage.setItem("count", JSON.stringify(current));
   }
 
   function korz(index) {
     let current = [...mas];
     current[index].status = !current[index].status;
-    localStorage.setItem('count',JSON.stringify(current))
+    localStorage.setItem("count", JSON.stringify(current));
   }
 
   return (
@@ -57,7 +56,7 @@ const Card = () => {
                     />
                   </Link>
 
-                  <h5>{item.grade} grd</h5>
+                  <h5 className="grade">{item.grade}%</h5>
                   <h6>{item.NameBook}</h6>
                   {/* <p>{item.Aftor}</p> */}
                   <div className="d-flex align-items-center ">
@@ -65,9 +64,9 @@ const Card = () => {
                       <button
                         onClick={() => korz(index)}
                         style={{
-                          backgroundColor: "rgb(225,106,0)"
+                          backgroundColor: "rgb(225,106,0)",
                         }}
-                        className="btn1 btn btn text-light my-1"
+                        className="btn1 fw-bold btn btn text-light my-1"
                       >
                         Korzinka
                       </button>
@@ -75,17 +74,21 @@ const Card = () => {
                       <Link to={`/card2/${item.id}`}>
                         <button
                           style={{
-                            backgroundColor: "rgb(225,106,0)"
+                            backgroundColor: "rgb(225,106,0)",
                           }}
-                          className="btn1 btn btn  text-light"
+                          className="btn1 btn btn fw-bold  text-light"
                         >
                           Learn More
                         </button>
                       </Link>
                     </div>
                     <h3 className="like " onClick={() => like(index)}>
-                    {item.status2 == true ? <AiOutlineHeart /> : <AiFillHeart />}
-                  </h3>
+                      {item.status2 == true ? (
+                        <AiOutlineHeart />
+                      ) : (
+                        <AiFillHeart />
+                      )}
+                    </h3>
                   </div>
                 </div>
               </div>

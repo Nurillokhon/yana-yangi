@@ -7,7 +7,7 @@ const Card2 = () => {
   const [mas, setMas] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.npoint.io/4ddb515a1fbdfe11397c")
+      .get("https://api.npoint.io/f6b5513c4c86229c5195")
       .then((ress) => {
         setMas(ress.data);
         console.log(ress.data, "ress");

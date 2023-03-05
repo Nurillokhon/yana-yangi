@@ -18,12 +18,12 @@ const Header = () => {
       <div style={{ marginTop: "150px",}} className="d-flex justify-content-around align-items-center py-2">
         <h3 className="fw-bold ">Hot arrivals</h3>
         <div className="d-flex">
-          <h6 className="px-4 text-secondary hover1">Fantastic</h6>
-          <h6 className="px-4 text-secondary hover1">Self-development</h6>
-          <h6 className="px-4 text-secondary hover1">Detectives</h6>
-          <h6 className="px-4 text-secondary hover1">Baby</h6>
-          <h6 className="px-4 text-secondary hover1">Audiobooks</h6>
-          <h6 className="px-4 text-secondary hover1">Other</h6>
+          <h6 className="px-4 hover1 hots">Fantastic</h6>
+          <h6 className="px-4 hover1 hots">Self-development</h6>
+          <h6 className="px-4 hover1 hots">Detectives</h6>
+          <h6 className="px-4 hover1 hots">Baby</h6>
+          <h6 className="px-4 hover1 hots">Audiobooks</h6>
+          <h6 className="px-4 hover1 hots">Other</h6>
         </div>
       </div>
       <div>
