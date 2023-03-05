@@ -26,7 +26,9 @@ const Navbar = () => {
             <div className="d-flex" style={{ marginLeft: "200px" }}>
               {/* <AiFillHeart/> */}
               <h2>
+                <Link to={'/like'}>
                   <AiOutlineHeart />
+                </Link>
               </h2>
               <h2>
                 <Link to={'/korzinka'}>

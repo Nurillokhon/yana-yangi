@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Korzinka = () => {
-
+const Like = () => {
     const massiv = JSON.parse(localStorage.getItem('count'))
-    console.log(massiv, "nimadir");
+
     return (
         <div>
             {
@@ -23,4 +22,4 @@ const Korzinka = () => {
     );
 }
 
-export default Korzinka;
+export default Like;

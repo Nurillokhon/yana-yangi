@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { json, Link } from 'react-router-dom';
 import { AiOutlineHeart } from 'react-icons/ai'
 import { AiFillHeart } from 'react-icons/ai'
 const Card = () => {
 
-    const [mas, setMas] = useState([])
-
+    const [mas, setMas] = useState(
+        JSON.parse(localStorage.getItem('count'))
+    )
     useEffect(() => {
         axios.get('https://api.npoint.io/4ddb515a1fbdfe11397c')
             .then(ress => {
@@ -23,6 +24,7 @@ const Card = () => {
         let current = [...mas]
 
         current[index].status = !current[index].status
+        localStorage.setItem('count',JSON.stringify(current))
         setMas(current)
     }
 
@@ -30,6 +32,9 @@ const Card = () => {
         let current = [...mas]
 
         current[index].status = !current[index].status
+
+        localStorage.setItem('count',JSON.stringify(current))
+
     }
     return (
         <div className='d-flex justify-content-center'>
