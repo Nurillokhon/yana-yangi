@@ -7,7 +7,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card2 from './companent/card2';
 import Korzinka from './companent/Korzinka';
-import Like from './companent/like';
+import Like from './companent/Like';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
