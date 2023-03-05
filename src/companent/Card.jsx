@@ -67,7 +67,7 @@ const Card = () => {
                         style={{
                           backgroundColor: "rgb(225,106,0)"
                         }}
-                        className="btn1 btn btn-outline text-light my-1"
+                        className="btn1 btn btn text-light my-1"
                       >
                         Korzinka
                       </button>

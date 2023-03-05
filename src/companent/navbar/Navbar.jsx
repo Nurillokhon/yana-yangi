@@ -1,9 +1,7 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
-// import { SlBasket } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-// import { AiFillHeart } from 'react-icons/ai'
 import "./navbar.css";
 
 const Navbar = () => {
