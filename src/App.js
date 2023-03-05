@@ -1,10 +1,10 @@
 import './App.css';
+import Card from './companent/Card';
 
 function App() {
   return (
     <div className="App">
-      nimadair nimadair
-      salom
+      <Card/>
     </div>
   );
 }

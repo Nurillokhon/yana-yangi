@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.img_book{
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.main {
+  max-width: 90%;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+li{
+  list-style: none;
+}
+
+.like{
+  color: orange;
+}
