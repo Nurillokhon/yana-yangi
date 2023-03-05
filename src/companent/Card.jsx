@@ -18,12 +18,12 @@ const Card = () => {
         console.log(err);
       });
   }, []);
-  
+
 
   function like(index) {
     let current = [...mas];
 
-    current[index].status = !current[index].status;
+    current[index].status2 = !current[index].status2;
     setMas(current);
     localStorage.setItem('count',JSON.stringify(current))
   }
@@ -84,7 +84,7 @@ const Card = () => {
                       </Link>
                     </div>
                     <h3 className="like " onClick={() => like(index)}>
-                    {item.status == true ? <AiOutlineHeart /> : <AiFillHeart />}
+                    {item.status2 == true ? <AiOutlineHeart /> : <AiFillHeart />}
                   </h3>
                   </div>
                 </div>
