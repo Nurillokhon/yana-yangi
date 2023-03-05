@@ -7,6 +7,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Card2 from './companent/card2';
 import Korzinka from './companent/Korzinka';
+import Like from './companent/like';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
         <Route path='/' element={<App/>}/>
         <Route path='/card2/:id' element={<Card2/>}/>
         <Route path='/korzinka' element={<Korzinka/>}/>
+        <Route path='/like' element={<Like/>}/>
       </Routes>
     </BrowserRouter>
     {/* </Provider> */}

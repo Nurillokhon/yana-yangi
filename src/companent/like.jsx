@@ -1,12 +1,10 @@
 import React from 'react';
 
-const Korzinka = () => {
-
+const Like = () => {
     const massiv = JSON.parse(localStorage.getItem('count'))
-    console.log(massiv, "nimadir");
+
     return (
         <div>
-           korzinaga tushgan mahsulotlar
             {
                 massiv.map((item, index) => {
                     if (item.status == false) {
@@ -24,4 +22,4 @@ const Korzinka = () => {
     );
 }
 
-export default Korzinka;
+export default Like;
