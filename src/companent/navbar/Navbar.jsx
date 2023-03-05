@@ -23,7 +23,9 @@ const Navbar = () => {
       <Link to="/like">
         <AiOutlineHeart className="heart" />
       </Link>
+      <Link to="/korzinka">
       <AiOutlineShoppingCart className="cart" />
+      </Link>
       <select className="nav_select" name="" id="">
         <option className="opt1" value="">
           UZB
