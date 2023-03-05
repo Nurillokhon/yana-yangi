@@ -7,7 +7,7 @@ const Like = () => {
         <div>
             {
                 massiv.map((item, index) => {
-                    if (item.status == false) {
+                    if (item.status2 == false) {
 
                         return (
                             <div className='d-flex align-items-center'>
@@ -16,6 +16,7 @@ const Like = () => {
                             </div>
                         )
                     }
+                    
                 })
             }
         </div>

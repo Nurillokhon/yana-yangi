@@ -19,18 +19,21 @@ const Card = () => {
       });
   }, []);
 
+
   function like(index) {
     let current = [...mas];
 
-    current[index].status = !current[index].status;
+    current[index].status2 = !current[index].status2;
     setMas(current);
+    localStorage.setItem('count',JSON.stringify(current))
   }
 
   function korz(index) {
     let current = [...mas];
-
     current[index].status = !current[index].status;
+    localStorage.setItem('count',JSON.stringify(current))
   }
+
   return (
     <div className="d-flex justify-content-center">
       <div className="d-flex mainnn">
@@ -81,7 +84,7 @@ const Card = () => {
                       </Link>
                     </div>
                     <h3 className="like " onClick={() => like(index)}>
-                    {item.status == true ? <AiOutlineHeart /> : <AiFillHeart />}
+                    {item.status2 == true ? <AiOutlineHeart /> : <AiFillHeart />}
                   </h3>
                   </div>
                 </div>
