@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -58,4 +58,65 @@ li{
 
 .like{
   color: orange;
+}
+.section{
+  font-family: cursive;
+  background-color: #fffaf5;
+}
+.main{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar{
+  color: rgb(76,41, 0) ;
+}
+.option{
+  /* background: linear-gradient(to top,green,rgba(255, 0, 0, 0.765),white,red, rgb(0, 187, 255)); */
+  background: linear-gradient(to top,white,rgb(225,106,0));
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+.bg_img{
+  background-image: url("https://www.linkpicture.com/q/image-1_186.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 70vh;
+  margin-left: 400px;
+  width: 800px;
+}
+.bg-color{
+  background-color: rgba(76, 41, 0, 0.829);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  margin: 0px -507px;
+}
+.bg_imgg{
+  background-image: url("https://www.linkpicture.com/q/image-1_186.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 70vh;
+}
+.inp{
+  position: relative;
+}
+.button{
+  background: linear-gradient(to top,white,orange);
+  position: absolute;
+  margin-left: 1200px;
+}
+
+.hover{
+  transition: all ease-in-out .1s;
+}
+.hover:hover{
+  border-bottom: 3px solid orangered;
+  padding-bottom: 20px;
+  padding-top: 2px
 }

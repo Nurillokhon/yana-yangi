@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Footer = () => {
+const Korzinka = () => {
     return (
         <div>
-            
+            njdsbgh
         </div>
     );
 }
 
-export default Footer;
+export default Korzinka;

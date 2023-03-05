@@ -25,6 +25,12 @@ const Card = () => {
         current[index].status = !current[index].status
         setMas(current)
     }
+
+    function korz(index){
+        let current = [...mas]
+
+        current[index].status = !current[index].status
+    }
     return (
         <div className='d-flex justify-content-center'>
             <div className='d-flex main'>
@@ -32,16 +38,22 @@ const Card = () => {
                     (mas) && mas.map((item, index) => {
                         return (
                             <div className='card1 mx-4'>
-                                    <li className='like' onClick={() => like(index)}>{item.status == true?<AiOutlineHeart />:<AiFillHeart/>}</li>
+                                <li className='like' onClick={() => like(index)}>{item.status == true ? <AiOutlineHeart /> : <AiFillHeart />}</li>
+
                                 <Link to={`/card2/${item.id}`}>
                                     <img className='img_book' src={(item.ImgBook) ? item.ImgBook : "https://waynesville.otc.edu/media/plugins/ninja-forms/assets/img/no-image-available-icon-6.jpg"} alt="" />
+                                </Link>
+
                                     <h2>{item.grade} grd</h2>
                                     <h2>{item.NameBook}</h2>
                                     <p>{item.Aftor}</p>
-                                </Link>
                                 <div className='d-flex'>
-                                    <button>Korzinka</button>
-                                    <button>desc</button>
+
+                                    <button onClick={()=>korz(index)}>Korzinka</button>
+
+                                    <Link to={`/card2/${item.id}`}>
+                                        <button>desc</button>
+                                    </Link>
                                 </div>
                             </div>
                         )
