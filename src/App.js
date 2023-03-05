@@ -1,10 +1,12 @@
 import './App.css';
+import Header from './companent/Header';
+import Footer from './companent/Footer';
 
 function App() {
   return (
     <div className="App">
-      nimadair nimadair
-      salom
+     <Header/>
+     <Footer/>
     </div>
   );
 }
