@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Card2 from "./companent/card2/Card2";
+import Card2 from "./card2/Card2";
 import Korzinka from "./companent/Korzinka";
 import Like from "./companent/like";
 import { store } from "./companent/store/store";
