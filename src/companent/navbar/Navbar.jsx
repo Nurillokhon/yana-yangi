@@ -7,11 +7,14 @@ import "./navbar.css";
 const Navbar = () => {
   return (
     <div className="nav">
+      <Link to="/">
+      
       <img
         className="nav_img"
         src="https://st2.depositphotos.com/3573725/6541/v/950/depositphotos_65413421-stock-illustration-book-logo.jpg"
         alt="Logo"
       />
+      </Link>
       <ul className="nav_ul">
         <li>Акции</li>
         <li><a href="#cotolog">Каталог</a> </li>

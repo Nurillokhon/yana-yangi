@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Card2 from './companent/card2/Card2';
 import Korzinka from './companent/Korzinka';
 import Like from './companent/Like';
+import Header from './companent/Header';
+import Card from './companent/Card';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,10 +17,12 @@ root.render(
     {/* <Provider store={store}> */}
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App/>}/>
-        <Route path='/more/:id/:name' element={<Card2/>}/>
-        <Route path='/korzinka' element={<Korzinka/>}/>
-        <Route path='/like' element={<Like/>}/>
+        <Route path="/" element={<App />}>
+          <Route path="/" element={<Header />} />
+          <Route path="/more/:id/:name" element={<Card2 />} />
+          <Route path="/korzinka" element={<Korzinka />} />
+          <Route path="/like" element={<Like />} />
+        </Route>
       </Routes>
     </BrowserRouter>
     {/* </Provider> */}
