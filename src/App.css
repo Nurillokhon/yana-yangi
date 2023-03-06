@@ -2,6 +2,7 @@
   width: 200px;
   height: 300px;
   object-fit: cover;
+  border-radius: 25px;
 }
 
 .mainnn {
@@ -19,6 +20,9 @@ li {
 
 .like {
   color: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .section {
   font-family: cursive;
