@@ -24,6 +24,7 @@ const Card = () => {
         console.log(err);
       });
   }, []);
+    const massiv = JSON.parse(localStorage.getItem("count"));
 
   function like(index) {
     if (qiymat.data.length > 0) {
@@ -53,11 +54,11 @@ const Card = () => {
     }
   }
 
-  if (qiymat.data.length < 0) {
+  if ( massiv != null &&qiymat.data.length > 0) {
     return (
       <div className="d-flex justify-content-center">
         <div className="d-flex mainnn">
-          {mas.map((item, index) => {
+          {qiymat.data.map((item, index) => {
             return (
               <div>
                 <div
@@ -118,7 +119,7 @@ const Card = () => {
     return (
       <div className="d-flex justify-content-center">
         <div className="d-flex mainnn">
-          {qiymat.data.map((item, index) => {
+          {mas.map((item, index) => {
             return (
               <div>
                 <div
