@@ -96,7 +96,7 @@ const Card = () => {
                           Korzinka
                         </button>
 
-                        <Link to={`/card2/${item.id}`}>
+                        <Link to={`/card2/${item.id}/${item.NameBook}`}>
                           <button
                             style={{
                               backgroundColor: "rgb(225,106,0)",
