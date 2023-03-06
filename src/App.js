@@ -11,9 +11,10 @@ function App() {
     <div className="App">
       
       <Navbar />
-      <Header />
-      <Card />
-      <Katalog />
+      {/* <Header /> */}
+      {/* <Card /> */}
+      {/* <Katalog /> */}
+      <Outlet/>
     </div>
   );
 }
