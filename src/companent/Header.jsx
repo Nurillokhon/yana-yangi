@@ -1,4 +1,6 @@
+
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -32,6 +34,8 @@ const Header = () => {
     current[index].status = !current[index].status;
     localStorage.setItem("count", JSON.stringify(current));
   }
+
+
   return (
     <div>
       <div>
@@ -104,7 +108,7 @@ const Header = () => {
                           Korzinka
                         </button>
 
-                        <Link to={`/more/${item.id}/${item.NameBook}`}>
+                        <Link to={`/more/${item.id}`}>
                           <button
                             style={{
                               backgroundColor: "rgb(225,106,0)",
@@ -169,6 +173,7 @@ const Header = () => {
       </div>
     </div>
   );
-};
 
-export default Header;
+}
+
+export default Header

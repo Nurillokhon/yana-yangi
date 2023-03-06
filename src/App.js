@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import Card from "./companent/Card";
-import Katalog from "./companent/Katalog";
+import Header from "./companent/Header";
 import Navbar from "./companent/navbar/Navbar";
 
 function App() {
