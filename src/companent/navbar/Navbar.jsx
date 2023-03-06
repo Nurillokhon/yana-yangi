@@ -1,10 +1,19 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector} from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./navbar.css";
 
 const Navbar = () => {
+  const qiymat = useSelector((state) => state);
+  const dispatch = useDispatch();
+  
+  function Run(val) {
+    dispatch({ type: "search", payload: { name: val } });
+    console.log(qiymat,"qiymat");
+  }
+
   return (
     <div className="nav">
       <img
@@ -19,7 +28,7 @@ const Navbar = () => {
         <li>О магазине</li>
         <li>Блог</li>
       </ul>
-      <input placeholder="serach book" className="nav_input" type="text" />
+      <input placeholder="serach book" onInput={(val) => Run(val.target.value)} className="nav_input" type="text" />
       <Link to="/like">
         <AiOutlineHeart className="heart" />
       </Link>

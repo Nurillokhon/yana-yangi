@@ -7,10 +7,11 @@ const Card2 = () => {
   const [mas, setMas] = useState([]);
   useEffect(() => {
     axios
-      .get("https://api.npoint.io/4ddb515a1fbdfe11397c")
+      .get("https://api.npoint.io/f6b5513c4c86229c5195")
       .then((ress) => {
         setMas(ress.data);
-        console.log(ress.data, "ress");
+        localStorage.setItem("count1", JSON.stringify(ress.data));
+        localStorage.setItem("count", JSON.stringify(ress.data));
       })
       .catch((err) => {
         console.log(err);
@@ -19,19 +20,23 @@ const Card2 = () => {
 
   return (
     <div>
-      {mas.map((item, index) => {
-        if (item.id == params.id) {
-          return (
-            <>
-              <h1>{item.NameBook}</h1>
-              <h1>{item.Data}</h1>
-              <img src={item.ImgBook} alt="rasm" />
-              <h1>{item.price}</h1>
-              <h1>{item.priceGrade}</h1>
-            </>
-          );
-        }
-      })}
+      {
+
+        mas.map((item, index) => {
+          if (item.id == params.id) {
+            return (
+              <>
+                <h1>{item.NameBook}</h1>
+                <h1>{item.Data}</h1>
+                <img src={item.ImgBook} alt="rasm" />
+                <h1>{item.price}</h1>
+                <h1>{item.priceGrade}</h1>
+              </>
+            );
+          }
+        })
+
+      }
       {/* <h1>{mas[+(params.id)].NameBook}</h1> 
             <h2>{mas[+(params.id)].Aftor}</h2> */}
     </div>
