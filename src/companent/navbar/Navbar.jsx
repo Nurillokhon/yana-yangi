@@ -49,7 +49,10 @@ const Navbar = () => {
           ENG
         </option>
       </select>
+      <Link to="/login">
+      
       <button className="nav_button">Sign In</button>
+      </Link>
     </div>
   );
 };

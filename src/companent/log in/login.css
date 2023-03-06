@@ -1,0 +1,66 @@
+/* .emailerr{
+    color: red;
+} */
+.body {
+  background-color: orange;
+  width: 100%;
+  height: 100vh;
+}
+.vhod {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: relative;
+  border-top-right-radius: 55px;
+  border-bottom-left-radius: 55px;
+  text-align: center;
+  justify-content: center;
+  top: 90px;
+  left: 410px;
+  padding-top: 10px;
+}
+.sign {
+  color: rgb(225, 106, 0);
+  font-weight: bold;
+  font-family: initial;
+}
+.inp1 {
+  margin-top: 60px;
+  outline: none;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid orangered;
+  transition: 0.5s;
+  padding-left: 20px;
+  color: orangered;
+}
+.inp1:focus {
+  width: 400px;
+  transition: 0.5s;
+}
+.inp1::placeholder {
+  color: orange;
+  font-weight: bold;
+}
+.zabil {
+  color: #864000;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.btns {
+  color: rgb(225, 106, 0);
+  border: 1px solid rgb(225, 106, 0);
+  background-color: white;
+  border-radius: 10px;
+  width: 70px;
+  height: 50px;
+  transition: 0.5s;
+ margin-top: 20px;
+  width: 300px;
+}
+.btns:hover {
+  background-color: orange;
+  border: none;
+  transition: 0.5s;
+  color: white;
+}

@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Card from "./Card";
-import Katalog from "./Katalog";
+import Card from "../card/Card";
+import Katalog from "../katalog/Katalog";
+import './header.css'
 
 const Header = () => {
   const qiymat = useSelector((state) => state);

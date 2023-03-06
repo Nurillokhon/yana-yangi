@@ -1,0 +1,53 @@
+    .img_book {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.btn1 {
+  transition: all ease-in-out 0.1s;
+  background-color: white;
+  border: 1px solid rgb(225, 106, 0);
+  color: rgb(225, 106, 0);
+  font-weight: bold;
+  border-radius: 10px;
+  width: 130px;
+  height: 40px;
+  margin-left: 70px;
+}
+.btn1:hover {
+  background-color: rgb(225, 106, 0);
+  color: white;
+}
+.star {
+  position: absolute;
+  color: #faaf00;
+  left: 10px;
+  bottom: 25px;
+  font-size: 25px;
+}
+.like {
+  color: orangered;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.grade {
+position: absolute;
+  left: 40px;
+  bottom: 23px;
+  font-size: 20px;
+}
+.mainnn {
+  max-width: 90%;
+  overflow-x: scroll;
+  padding-top: 80px;
+  height: 100vh;
+}
+
+.mainnn::-webkit-scrollbar {
+  display: none;
+}
+li {
+  list-style: none;
+}
