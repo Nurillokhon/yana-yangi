@@ -8,7 +8,7 @@ import { AiFillHeart } from "react-icons/ai";
 const Card = () => {
   const qiymat = useSelector((state) => state);
   const [mas, setMas] = useState([]);
-  const massiv = JSON.parse(localStorage.getItem('count'))
+  
   const dispatch = useDispatch()
 
   useEffect(() => {
