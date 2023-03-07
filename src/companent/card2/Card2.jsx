@@ -45,8 +45,6 @@ const Card2 = () => {
           );
         }
       })}
-      {/* <h1>{mas[+(params.id)].NameBook}</h1> 
-            <h2>{mas[+(params.id)].Aftor}</h2> */}
     </div>
   );
 };
