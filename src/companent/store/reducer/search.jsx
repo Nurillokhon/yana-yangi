@@ -6,24 +6,6 @@ function Search_input(state = initializeState, action) {
         return state
     }
 
-    // if(action.type == 'search'){
-
-    //     if(action.payload.name==''){
-    //         state=initializeState
-    //         console.log(initializeState,'action');
-    //         return state
-    //     }
-    //     else{
-    //         let current = [...state]
-    //         let qiymat = current.filter(item => {
-    //             return item.NameBook.includes(action.payload.name)
-    //         })
-    //         state = qiymat
-    //         console.log(state,'bu state');
-    //         return state
-    //     }
-    // }
-
     if(action.type == 'search'){
         state = action.payload.name
         return state
@@ -46,6 +28,26 @@ function Search_input(state = initializeState, action) {
 
     if(action.type == "Boshqa"){
         state = action.payload.name
+        return state
+    }
+
+    if(action.type == 'hamma'){
+        state = initializeState
+        return state
+    }
+
+    if(action.type == 'like'){
+        let current = [...state]
+        current[action.payload.index].status2 = !current[action.payload.index].status2
+        state = current
+        console.log(state,'like');
+        return state
+    }
+
+    if(action.type == 'kor'){
+        let current = [...state]
+        current[action.payload.index].status = !current[action.payload.index].status
+        state = current
         return state
     }
     return state

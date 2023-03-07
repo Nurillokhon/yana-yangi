@@ -1,25 +1,9 @@
-.img_book {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.mainnn {
-  max-width: 90%;
-  overflow-x: scroll;
-  padding-top: 80px;
-}
-
-.mainnn::-webkit-scrollbar {
-  display: none;
-}
-li {
-  list-style: none;
-}
-
-.like {
-  color: orangered;
-}
 .section {
   font-family: cursive;
   background-color: #fffaf5;
@@ -60,15 +44,6 @@ li {
   z-index: 1;
   color: orangered;
 }
-
-.hover1 {
-  transition: all ease-in-out 0.1s;
-}
-.hover1:hover {
-  border-bottom: 3px solid grey;
-  padding-bottom: 20px;
-  padding-top: 2px;
-}
 .btn_signin {
   background-color: white;
   border-radius: 10px;
@@ -83,50 +58,6 @@ li {
   transition: 0.5s;
 }
 
-.btn1 {
-  transition: all ease-in-out 0.1s;
-}
-.btn1:hover {
-  background-color: green;
-}
-.row1 {
-  padding-left: 10%;
-  padding-top: 5%;
-  color: rgb(76, 41, 0);
-  font-family: cursive;
-}
-.col1 {
-  padding-top: 40px;
-}
-.hots{
-  color: gray;
-  transition: 700ms;
-}
-.hots:hover {
-  border-bottom: 1px solid orangered;
-  transform: translateY(-10px) scale(1.2);
-  transition: 700ms;
-  z-index: 1;
-  color: orange;
-}
-.grade{
-  width: 50px;
-  height: 50px;
-  background-color: rgb(215, 126, 25);
-  margin-left: 10px;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
- padding-top: 10px;
- margin-top: -30px;
-}
-.cat div:hover{
-    border-bottom: 1px solid orangered;
-  color: orangered;
-  transform: translateY(10px) scale(1.1);
-  transition: 500ms;
-  z-index: 1;
-}
-.cat div{
-  transition: 500ms;
+a{
+  text-decoration: none;
 }

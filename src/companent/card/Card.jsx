@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
+import './card.css'
 const Card = () => {
   const qiymat = useSelector((state) => state);
   const [mas, setMas] = useState([]);
@@ -15,7 +16,7 @@ const Card = () => {
       .then((ress) => {
         setMas(ress.data);
         dispatch({ type: 'added2', payload: { mass: ress.data } })
-        localStorage.setItem("count1", JSON.stringify(ress.data));
+        // localStorage.setItem("count1", JSON.stringify(ress.data));
         // localStorage.setItem("count", JSON.stringify(ress.data));
         korz()
       })
@@ -26,42 +27,48 @@ const Card = () => {
   // const massiv = JSON.parse(localStorage.getItem('count'))
 
   function like(index) {
-    if (qiymat.data.length > 0) {
-      let current = [...qiymat.data];
+    // if (qiymat.data.length > 0) {
+    //   let current = [...qiymat.data];
 
-      current[index].status2 = !current[index].status2;
-      setMas(current);
-      localStorage.setItem("count", JSON.stringify(current));
-    } else {
-      let current = [...mas];
+    //   current[index].status2 = !current[index].status2;
+    //   setMas(current);
+    //   localStorage.setItem("count", JSON.stringify(current));
+    // } else {
+    //   let current = [...mas];
 
-      current[index].status2 = !current[index].status2;
-      setMas(current);
-      localStorage.setItem("count", JSON.stringify(current));
-    }
+    //   current[index].status2 = !current[index].status2;
+    //   setMas(current);
+    //   localStorage.setItem("count", JSON.stringify(current));
+    // }
+
+    dispatch({ type: 'like', payload: { index: index } })
+
   }
 
   function korz(index) {
-    if (qiymat.data.length > 0) {
-      let current = [...qiymat.data];
-      current[index].status = !current[index].status;
-      localStorage.setItem("count", JSON.stringify(current));
-    }
-    else{
-      let current = [...mas];
-      current[index].status = !current[index].status;
-      localStorage.setItem("count", JSON.stringify(current));
-    }
+    // if (qiymat.data.length > 0) {
+    //   let current = [...qiymat.data];
+    //   current[index].status = !current[index].status;
+    //   localStorage.setItem("count", JSON.stringify(current));
+    // }
+    // else{
+    //   let current = [...mas];
+    //   current[index].status = !current[index].status;
+    //   localStorage.setItem("count", JSON.stringify(current));
+    // }
+    dispatch({ type: 'kor', payload: { index: index } })
+
   }
 
     return (
-      <div className="d-flex justify-content-center">
+      <div id='card' className="d-flex justify-content-center">
         <div className="d-flex mainnn">
           {
             qiymat.data.map((item, index) => {
               return (
                 <div>
                   <div
+
                     className=" mx-3 card p-3 shadow "
                     style={{ border: "none" }}
                   >
@@ -103,7 +110,7 @@ const Card = () => {
                           </button>
                         </Link>
                       </div>
-                      <h3 className="like " onClick={() => like(index)}>
+                      <h3 className="like" onClick={() => like(index)}>
                         {item.status2 == true ? (
                           <AiOutlineHeart />
                         ) : (

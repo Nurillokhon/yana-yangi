@@ -1,16 +1,17 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Korzinka = () => {
 
-    const massiv = JSON.parse(localStorage.getItem('count'))
-    console.log(massiv, "nimadir");
+
+const Like = () => {
+    // const massiv = JSON.parse(localStorage.getItem('count'))
+    const qiymat = useSelector((state) => state);
+
     return (
         <div>
-           korzinaga tushgan mahsulotlar
             {
-                massiv.map((item, index) => {
-                    if (item.status == false) {
-
+                qiymat.data.map((item, index) => {
+                    if (item.status2 == false) {
                         return (
                             <div className='d-flex align-items-center'>
                                 <img width={200} src={item.ImgBook} alt="" />
@@ -18,12 +19,11 @@ const Korzinka = () => {
                             </div>
                         )
                     }
+                    
                 })
             }
         </div>
     );
-
 }
 
-
-export default Korzinka;
+export default Like;

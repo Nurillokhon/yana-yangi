@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import Card from "./Card";
-import Katalog from "./Katalog";
+import Card from "../card/Card";
+import Katalog from "../katalog/Katalog";
+import './header.css'
 
 const Header = () => {
   const qiymat = useSelector((state) => state);
@@ -13,7 +14,7 @@ const Header = () => {
       .then((ress) => {
         setMas(ress.data)
         // dispatch({ type: 'added2', payload: { mass: ress.data } })
-        localStorage.setItem("count1", JSON.stringify(ress.data));
+        // localStorage.setItem("count1", JSON.stringify(ress.data));
         // localStorage.setItem("count", JSON.stringify(ress.data));
       })
 
@@ -50,12 +51,16 @@ const Header = () => {
     })
     dispatch({ type: "Boshqa", payload: { name: nimadir } });
   }
+
+  function hamma(){
+    dispatch({ type: "hamma" });
+  }
   
   return (
       <>
-        <div className={(qiymat.data.length == 11)?'d-block':'d-none'}>
+        <div>
           <div>
-            <div className="row row1 g-0  align-item-center">
+            <div className={(qiymat.data.length == 11 )?'row row1 g-0  align-item-center':'d-none row row1 g-0  align-item-center'}>
               <div className="col-6  col1">
                 <h1 className="fw-bold">Bookstore</h1>
                 <h6>The World Of Books. Book is a source of knowledge</h6>
@@ -70,12 +75,12 @@ const Header = () => {
           <div style={{ marginTop: "150px", }} className="d-flex justify-content-around align-items-center py-2">
             <h3 className="fw-bold ">Hot arrivals</h3>
             <div className="d-flex">
-              <h6 className="px-4 hover1 hots" onClick={()=>Fan()}>Fantastic</h6>
-              <h6 className="px-4 hover1 hots" onClick={()=>Self()}>Self-development</h6>
-              <h6 className="px-4 hover1 hots" onClick={()=>Det()}>Detectives</h6>
+            <a href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Fan()}> Fantastic</h6></a>
+            <a href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Self()}>Self-development</h6></a>
+            <a href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Det()}>Detectives</h6></a>
               <h6 className="px-4 hover1 hots">Baby</h6>
-              <h6 className="px-4 hover1 hots">Audiobooks</h6>
-              <h6 className="px-4 hover1 hots" onClick={()=>boshqa()}>Other</h6>
+              <h6 className="px-4 hover1 hots" onClick={()=>hamma()}>Audiobooks</h6>
+              <a href="#card"><h6 className="px-4 hover1 hots" onClick={()=>boshqa()}>Other</h6></a>
             </div>
           </div>
           <div>

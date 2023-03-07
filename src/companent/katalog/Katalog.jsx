@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './katalog.css'
 const Katalog = () => {
     return (
         <div className='container text-center'>
