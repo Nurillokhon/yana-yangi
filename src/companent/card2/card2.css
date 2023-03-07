@@ -19,17 +19,15 @@
   position: absolute;
   color: #faaf00;
   left: 150px;
-  top: 130px;
+  top: 170px;
   /* bottom: 25px; */
   font-size: 35px;
 }
 .grades {
   position: absolute;
-  top: 130px;
-  /* color: white; */
+  top: 170px;
   color: black;
   left: 200px;
-  /* bottom: 23px; */
   font-size: 25px;
 }
 .row ul {

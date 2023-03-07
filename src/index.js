@@ -10,12 +10,14 @@ import Korzinka from './companent/korzinka/Korzinka';
 import Like from './companent/like/Like';
 import { store } from './companent/store/store'
 import Header from './companent/header/Header';
-import Login from './companent/log in/Login';
-import Sign from './companent/sign in/Sign';
-
+import Login from './companent/sign in/Sign';
+import Sign from './companent/log in/Login';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ToastContainer />
     <Provider store={store}>
       <BrowserRouter>
         <Routes>

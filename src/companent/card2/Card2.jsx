@@ -45,18 +45,7 @@ function MyApp() {
     enqueueSnackbar("I love snacks.");
   };
 
-  const handleClickVariant = (variant: VariantType) => () => {
-    // variant could be success, error, warning, info, or default
-    enqueueSnackbar("Успешно куплен!", { variant });
-  };
 
-  return (
-    <React.Fragment>
-      <button className="btn2" onClick={handleClickVariant("success")}>
-        КУПИТЬ СЕЙЧАС
-      </button>
-    </React.Fragment>
-  );
 }
 
   return (
@@ -72,7 +61,7 @@ function MyApp() {
                 <h1 className="name">
                   <b>{item.NameBook}</b>
                 </h1>
-
+                <h2>{item.price} so'm</h2>
                 <h3 style={{ color: "black", marginTop: "50px" }}>Рейтинг:</h3>
                 <BsFillStarFill className="stars" />
                 <b className="grades">{item.grade}</b>

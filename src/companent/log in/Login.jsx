@@ -1,125 +1,109 @@
-// import React, { useState, useEffect } from "react";
-// import "./login.css";
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, serPassword] = useState("");
-//   const [emailDirty, setEmailDirty] = useState(false);
-//   const [passwordDirty, setPasswordDirty] = useState(false);
-//   const [emailError, setEmailError] = useState("Емейл не может быть пустым");
-//   const [passwordError, setPasswordError] = useState(
-//     "Пароль не может быть пустым"
-//   );
-//   const [formValid, setFormValid] = useState(false);
-//   useEffect(() => {
-//     if (emailError || passwordError) {
-//       setFormValid(false);
-//     } else {
-//       setFormValid(true);
-//     }
-//   }, [emailError, passwordError]);
-
-//   const emailHandler = (e) => {
-//     setEmail(e.target.value);
-//     const re =
-//       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     if (!re.test(String(e.target.value).toLowerCase())) {
-//       setEmailError("емейл не корректен");
-//     } else {
-//       setEmailError("");
-//     }
-//   };
-
-//   const passwordHandler = (e) => {
-//     serPassword(e.target.value);
-//     if (e.target.value.length < 3 || e.target.value.length > 8) {
-//       setPasswordError("Пароль должен быть длинее 3 или менее 8");
-//       if (!e.target.value) {
-//         setPasswordError("Пароль не может быть пустым");
-//       }
-//     } else {
-//       setPasswordError("");
-//     }
-//   };
-
-//   const blurHandler = (e) => {
-//     switch (e.target.name) {
-//       case "email":
-//         setEmailDirty(true);
-//         break;
-//       case "passwor":
-//         setPasswordDirty(true);
-//         break;
-//     }
-//   };
-//   return (
-//     <div>
-//       <h1 className="regis">Регистрация</h1>
-//       {emailDirty && emailError && <div className="emailerr">{emailError}</div>}
-//       <input
-//         onChange={(e) => emailHandler(e)}
-//         onBlur={(e) => blurHandler(e)}
-//         name="email"
-//         type="text"
-//         placeholder="Enter your email"
-//         value={email}
-//       />
-//       {passwordDirty && passwordError && (
-//         <div className="emailerr">{passwordError}</div>
-//       )}
-//       <input
-//         onChange={(e) => passwordHandler(e)}
-//         onBlur={(e) => blurHandler(e)}
-//         name="password"
-//         type="text"
-//         placeholder="Enter your password"
-//         value={password}
-//       />
-//       <button disabled={!formValid} type="submit">
-//         Registration
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Login;
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./login.css";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const Login = () => {
-  // const [val1, setVal1] = useState("");
-  // const [val2, setVal2] = useState("");
+import axios from "axios";
+const Sign = () => {
+  const [Name, setName] = useState(null);
+  const [Email, setEmail] = useState(null);
+  const [Password, setPassword] = useState(null);
+  const [Password2, setPassword2] = useState(null);
+  const [Number, setNumber] = useState(null);
+  const [border, setBorder] = useState();
+  const [border2, setBorder2] = useState();
 
+  const naviget = useNavigate();
 
+  function Yuborish() {
+    if (Name != null && Email != null && Password != null && Number != null) {
+      if (Password == Password2) {
+        axios.post("https://6407167c862956433e63966f.mockapi.io/Users", {
+          name: Name,
+          email: Email,
+          password: Password,
+          Number: Number,
+        });
+        setBorder2("white");
+        setBorder("white");
+        naviget("/login");
+        toast.success("Royhatdan otingiz");
+      } else {
+        setBorder("white");
+        setBorder2("red");
+        toast.error("Parolni birhil qilib qoyn ");
+      }
+    } else {
+      console.log("kemadi");
+      setBorder("red");
+      toast.error("Qil Rangli Ramkalarni Toldiring");
+    }
+  }
 
   return (
     <div className="body">
-      <div className="vhod">
-        <h2 className="sign">Вход</h2>
+      <div className="vhods">
+        <h2 className="sign">Регистрация</h2>
         <input
-          // onInput={(val) => setVal1(val.target.value)}
           className="inp1"
           type="text"
-          placeholder="Введите почту"
+          placeholder="Введите Имию и Фамилию"
+          onInput={(val) => {
+            setName(val.target.value);
+          }}
+          style={{ border: `3px solid ${border}` }}
         />
         <br />
         <input
-          // onInput={(val) => setVal2(val.target.value)}
           className="inp1"
           type="text"
-          placeholder="Введите пароль"
+          placeholder="Введите Почту"
+          onInput={(val) => {
+            setEmail(val.target.value);
+          }}
+          style={{ border: `3px solid ${border}` }}
         />
-        <p className="zabil">Забыли свой пароль?</p>
-        <button className="btns">Войти в профиль</button>
-        <p className="zabil">
-          Ещё не прошли регитсрацию?{" "}
-          <Link to="/sign" style={{ textDecoration: "none", color: "orange" }}>
-            <span>Зарегистрироваться</span>
-          </Link>
-        </p>
+        <input
+          className="inp1"
+          type="text"
+          placeholder="Введите свой номер телефона"
+          onInput={(val) => {
+            setNumber(val.target.value);
+          }}
+          style={{ border: `3px solid ${border}` }}
+        />
+        <br />
+        <input
+          className="inp1"
+          type="password"
+          placeholder="Введите Пароль"
+          onInput={(val) => {
+            setPassword(val.target.value);
+          }}
+          style={{
+            border: `3px solid ${border}`,
+            border: `3px solid ${border2}`,
+          }}
+        />
+        <br />
+        <input
+          className="inp1"
+          type="password"
+          placeholder="Введите Пароль ещё раз"
+          onInput={(val) => {
+            setPassword2(val.target.value);
+          }}
+          style={{
+            border: `3px solid ${border}`,
+            border: `3px solid ${border2}`,
+          }}
+        />
+        <button className="btns" onClick={Yuborish}>
+          Зарегистрироваться
+        </button>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Sign;
