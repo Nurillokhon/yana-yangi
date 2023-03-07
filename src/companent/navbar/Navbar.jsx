@@ -32,26 +32,42 @@ const Navbar = () => {
   function bos() {
     console.log(ism[0].name,'ism');
     dispatch({ type: "hamma" });
+  console.log(qiymat.Auth);
+  function Run(val) {
+    dispatch({ type: "search", payload: { name: val } });
+    console.log(qiymat, "qiymat");
   }
+  const [salom, setSalom] = useState();
+  useEffect(() => {
+    let name = JSON.parse(localStorage.getItem("User"));
+    setSalom(name);
+  }, []);
 
   return (
     <div className="nav">
       <Link to="/">
 
-        <img onClick={() => bos()}
+        <img
           className="nav_img"
           src="https://st2.depositphotos.com/3573725/6541/v/950/depositphotos_65413421-stock-illustration-book-logo.jpg"
           alt="Logo"
         />
       </Link>
       <ul className="nav_ul">
-        <li>Акции</li>
-        <li><a href="#cotolog">Каталог</a> </li>
-        <li>Доставка</li>
-        <li>О магазине</li>
-        <li>Блог</li>
+        <li>Stoc</li>
+        <li>
+          <a href="#cotolog">Catalog</a>{" "}
+        </li>
+        <li>Deleviriy</li>
+        <li>About store</li>
+        <li>Blog</li>
       </ul>
-      <input placeholder="serach book" onInput={(val) => Run(val.target.value)} className="nav_input" type="text" />
+      <input
+        placeholder="serach book"
+        onInput={(val) => Run(val.target.value)}
+        className="nav_input"
+        type="text"
+      />
       <Link to="/like">
         <AiOutlineHeart className="heart" />
       </Link>
@@ -81,8 +97,19 @@ const Navbar = () => {
               }</h1>
         </div> */}
       </div>
+      {salom ? 
+        <>
+        <h2 style={{color:"orange"}}>Salom {salom.name} 🖐</h2>
+        </>
+       : 
+        <>
+          <Link to="/login">
+            <button className="nav_button">Sign In</button>
+          </Link>
+        </>
+      }
     </div>
-  );
+  );}
 };
 
 export default Navbar;
