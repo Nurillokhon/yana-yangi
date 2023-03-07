@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../card/Card";
 import Katalog from "../katalog/Katalog";
-import './header.css'
+import './header.css';
 
 const Header = () => {
   const qiymat = useSelector((state) => state);
@@ -46,11 +46,53 @@ const Header = () => {
         </div>
         <Card />
         <Katalog />
+        <div className="container text-center">
+          <h3 className="pt-5 mt-5 fw-bold" id="about">
+            About Store
+          </h3>
+          <div className="row siu">
+            <div className="col-3 ">
+              <h1 className="fw-bold ">1</h1>
+              <span> Branches all over the country</span>
+            </div>
+            <div className="col-3">
+              <h1 className="fw-bold ">585</h1>
+              <span> Products in the catalog</span>
+            </div>
+            <div className="col-3">
+              <h1 className="fw-bold ">8659</h1>
+              <span> Buyers</span>
+            </div>
+            <div className="col-3">
+              <h1 className="fw-bold ">72</h1>
+              <span>Hours of delivery by city</span>
+            </div>
+          </div>
+          <div>
+            <h3 className="py-5 mt-5 fw-bold" id="delive">
+              Delivery
+            </h3>
+            <p>
+              We work without holidays and weekends! Residents of Kyiv can
+              receive an order on the day of its registration. Customers from
+              other cities of Ukraine can receive an order within 1-5 days,
+              depending on the location of the settlement and the chosen <br />{" "}
+              delivery method. Orders over UAH 1000 are delivered free of
+              charge*. You can see the available methods, exact terms and cost
+              of delivery during checkout in the order basket, after choosing
+              the city of delivery. <br />
+              <span className="fw-bold fs-5"> More</span>
+            </p>
+          </div>
+          <div>
+            <h3 className="py-5 mt-5 fw-bold" id="delive">
+              Follow us on social networks
+            </h3>
+            
+          </div>
+        </div>
       </>
     );
-    // }else{
-    //   console.log('ishlamadi');
-    // }
   }
 };
 

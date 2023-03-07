@@ -83,12 +83,13 @@ function MyApp() {
                     <b>РАБОЧЕЕ ВРЕМЯ 24/7</b>
                   </li>
                 </ul>
-                {/* <button className="btn2">
+                <button className="btn2">
                   <b>КУПИТЬ СЕЙЧАС</b>
-                </button> */}
+                </button>
                 <button className="btn3" onClick={() => korz(index)}>
                   <b>ДОБАВИТЬ В КОРЗИНУ</b>
                 </button>
+
                 <SnackbarProvider maxSnack={3}>
                   <MyApp />
                 </SnackbarProvider>
@@ -97,8 +98,6 @@ function MyApp() {
           );
         }
       })}
-      {/* <h1>{mas[+(params.id)].NameBook}</h1> 
-            <h2>{mas[+(params.id)].Aftor}</h2> */}
     </div>
   );
 };
