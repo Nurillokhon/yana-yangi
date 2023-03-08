@@ -3,6 +3,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import Dropdown from '../dropdown/Dropdown'
 import "./navbar.css";
 
 const Navbar = () => {
@@ -49,17 +50,7 @@ const Navbar = () => {
       <Link to="/korzinka">
         <AiOutlineShoppingCart className="cart" />
       </Link>
-      <select className="nav_select" name="" id="">
-        <option className="opt1" value="">
-          UZB
-        </option>
-        <option className="opt2" value="">
-          RU
-        </option>
-        <option className="opt3" value="">
-          ENG
-        </option>
-      </select>
+       <Dropdown/>
       {salom ? 
         <>
         <h2 style={{color:"orange"}}>Salom {salom.name} 🖐</h2>
