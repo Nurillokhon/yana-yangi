@@ -79,15 +79,14 @@ const Header = () => {
           >
             <h3 className="fw-bold ">Hot arrivals</h3>
             <div className="d-flex">
-            <a href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Fan()}> Fantastic</h6></a>
-            <a href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Self()}>Self-development</h6></a>
-            <a href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Det()}>Detectives</h6></a>
-              <h6 className="px-4 hover1 hots">Baby</h6>
-              <h6 className="px-4 hover1 hots" onClick={()=>hamma()}>Audiobooks</h6>
-              <a href="#card"><h6 className="px-4 hover1 hots" onClick={()=>boshqa()}>Other</h6></a>
+            <a className="hots" href="#card"> <h6 className="px-4 " onClick={()=>Fan()}> Fantastic</h6></a>
+            <a className="hots" href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Self()}>Self-development</h6></a>
+            <a className="hots" href="#card"> <h6 className="px-4 hover1 hots" onClick={()=>Det()}>Detectives</h6></a>
+              <h6 className="px-4 hots">Baby</h6>
+              <h6 className="px-4 hots" onClick={()=>hamma()}>Audiobooks</h6>
+              <a className="hots" href="#card"><h6 className="px-4 hover1 hots" onClick={()=>boshqa()}>Other</h6></a>
             </div>
           </div>
-          <div></div>
         </div>
         <Card />
         <Katalog />

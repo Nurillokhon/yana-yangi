@@ -14,6 +14,7 @@
   width: 130px;
   height: 40px;
   margin-left: 70px;
+  /* padding-right: 20px; */
 }
 .btn1:hover {
   background-color: rgb(225, 106, 0);
@@ -35,7 +36,7 @@
 .grade {
 position: absolute;
   left: 40px;
-  bottom: 23px;
+  bottom: 17px;
   font-size: 20px;
 }
 .mainnn {
@@ -50,4 +51,11 @@ position: absolute;
 }
 li {
   list-style: none;
+}
+.arrow{
+  color: white;
+  font-weight: bold;
+  margin-top: -50px;
+  margin-left: 90px;
+  font-size: 20px;
 }

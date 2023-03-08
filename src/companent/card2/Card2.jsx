@@ -7,6 +7,7 @@ import {AiOutlineCheckCircle} from 'react-icons/ai'
 import { useSelector } from "react-redux";
 import Button from "@mui/material/Button";
 import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
+import Raiting from '../raiting/Raiting'
 // LEARN MORE
 
 const Card2 = () => {
@@ -50,7 +51,7 @@ function MyApp() {
 
   return (
     <div>
-      {mas.map((item, index) => {
+      {qiymat.data.map((item, index) => {
         if (item.id == params.id) {
           return (
             <div className="row g-0" key={index}>
@@ -62,9 +63,8 @@ function MyApp() {
                   <b>{item.NameBook}</b>
                 </h1>
                 <h2>{item.price} so'm</h2>
-                <h3 style={{ color: "black", marginTop: "50px" }}>Рейтинг:</h3>
-                <BsFillStarFill className="stars" />
-                <b className="grades">{item.grade}</b>
+                {/* <h3 style={{ color: "black", marginTop: "50px" }}>Рейтинг:</h3> */}
+                <Raiting />
                 <ul>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
