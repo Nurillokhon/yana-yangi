@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import axios from "axios";
 import "./navbar.css";
 
 const Navbar = () => {
   const qiymat = useSelector((state) => state);
-  const dispatch = useDispatch();
   const [mas, setMas] = useState([]);
-  const ism = JSON.parse(localStorage.getItem('name'))
+  const dispatch = useDispatch();
+  console.log(qiymat.Auth);
 
+  function Run(val) {
+    let nimadir = mas.filter(item => {
+      return item.NameBook.toLowerCase().includes(val.toLowerCase())
+    })
+    dispatch({ type: "search", payload: { name: nimadir, val: val } });
+
+  }
+
+  const [salom, setSalom] = useState();
   useEffect(() => {
     axios.get("https://api.npoint.io/f6b5513c4c86229c5195")
       .then((ress) => {
@@ -20,25 +29,6 @@ const Navbar = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-
-  function Run(val) {
-    let nimadir = mas.filter(item => {
-      return item.NameBook.toLowerCase().includes(val.toLowerCase())
-    })
-    dispatch({ type: "search", payload: { name: nimadir, val: val } });
-  }
-
-  function bos() {
-    console.log(ism[0].name,'ism');
-    dispatch({ type: "hamma" });
-  console.log(qiymat.Auth);
-  function Run(val) {
-    dispatch({ type: "search", payload: { name: val } });
-    console.log(qiymat, "qiymat");
-  }
-  const [salom, setSalom] = useState();
-  useEffect(() => {
     let name = JSON.parse(localStorage.getItem("User"));
     setSalom(name);
   }, []);
@@ -46,7 +36,6 @@ const Navbar = () => {
   return (
     <div className="nav">
       <Link to="/">
-
         <img
           className="nav_img"
           src="https://st2.depositphotos.com/3573725/6541/v/950/depositphotos_65413421-stock-illustration-book-logo.jpg"
@@ -85,18 +74,6 @@ const Navbar = () => {
           ENG
         </option>
       </select>
-      <div>
-        {/* <div className={(ism.length >0)?'d-none':'d-block'}> */}
-          <Link to="/login">
-            <button className="nav_button">Sign In</button>
-          </Link>
-        {/* </div> */}
-        {/* <div className={(ism.length>0)?'d-block':'d-none'}>
-             <h1>{
-              // ism[0].name
-              }</h1>
-        </div> */}
-      </div>
       {salom ? 
         <>
         <h2 style={{color:"orange"}}>Salom {salom.name} 🖐</h2>
@@ -109,7 +86,7 @@ const Navbar = () => {
         </>
       }
     </div>
-  );}
+  );
 };
 
 export default Navbar;

@@ -30,11 +30,11 @@ const Card2 = () => {
     if (qiymat.data.length > 0) {
       let current = [...qiymat.data];
       current[index].status = !current[index].status;
-      // localStorage.setItem("count", JSON.stringify(current));
+      localStorage.setItem("count", JSON.stringify(current));
     } else {
       let current = [...mas];
       current[index].status = !current[index].status;
-      // localStorage.setItem("count", JSON.stringify(current));
+      localStorage.setItem("count", JSON.stringify(current));
     }
   }
 

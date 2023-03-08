@@ -23,7 +23,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="/" element={<Header />} />
-            <Route path="/card2/:id" element={<Card2 />} />
+            <Route path="/more/:id/:Namebook" element={<Card2 />} />
             <Route path="/korzinka" element={<Korzinka />} />
             <Route path="/like" element={<Like />} />
           </Route>
