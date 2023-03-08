@@ -4,18 +4,33 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Dropdown from '../dropdown/Dropdown'
+
+import axios from "axios";
 import "./navbar.css";
 
 const Navbar = () => {
   const qiymat = useSelector((state) => state);
+  const [mas, setMas] = useState([]);
   const dispatch = useDispatch();
   console.log(qiymat.Auth);
+
   function Run(val) {
-    dispatch({ type: "search", payload: { name: val } });
-    console.log(qiymat, "qiymat");
+    let nimadir = mas.filter(item => {
+      return item.NameBook.toLowerCase().includes(val.toLowerCase())
+    })
+    dispatch({ type: "search", payload: { name: nimadir, val: val } });
+
   }
+
   const [salom, setSalom] = useState();
   useEffect(() => {
+    axios.get("https://api.npoint.io/f6b5513c4c86229c5195")
+      .then((ress) => {
+        setMas(ress.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     let name = JSON.parse(localStorage.getItem("User"));
     setSalom(name);
   }, []);

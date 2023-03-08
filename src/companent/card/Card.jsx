@@ -55,67 +55,67 @@ const Card = () => {
   //   }
   // }
 
-  if (massiv != null && qiymat.data.length > 0) {
-    return (
-      <div className="d-flex justify-content-center">
-        <div className="d-flex mainnn">
-          {qiymat.data.map((item, index) => {
-            return (
-              <div>
-                <div
-                  className=" mx-3 card p-3 shadow "
-                  style={{ border: "none" }}
-                >
-                  <Link to={`/more/${item.id}/${item.NameBook}`}>
-                    <img
-                      className="img_book"
-                      src={
-                        item.ImgBook
-                          ? item.ImgBook
-                          : "https://waynesville.otc.edu/media/plugins/ninja-forms/assets/img/no-image-available-icon-6.jpg"
-                      }
-                      alt="rasm"
-                    />
-                  </Link>
+  // if (massiv != null && qiymat.data.length > 0) {
+    // return (
+    //   <div className="d-flex justify-content-center">
+    //     <div className="d-flex mainnn">
+    //       {qiymat.data.map((item, index) => {
+    //         return (
+    //           <div>
+    //             <div
+    //               className=" mx-3 card p-3 shadow "
+    //               style={{ border: "none" }}
+    //             >
+    //               <Link to={`/more/${item.id}/${item.NameBook}`}>
+    //                 <img
+    //                   className="img_book"
+    //                   src={
+    //                     item.ImgBook
+    //                       ? item.ImgBook
+    //                       : "https://waynesville.otc.edu/media/plugins/ninja-forms/assets/img/no-image-available-icon-6.jpg"
+    //                   }
+    //                   alt="rasm"
+    //                 />
+    //               </Link>
 
-                  <h6>{item.NameBook}</h6>
-                  <div className="d-flex align-items-center ">
-                    <div>
-                      {/* <button
-                        onClick={() => korz(index)}
-                        style={{ backgroundColor: "rgb(225,106,0)" }}
-                        className="btn1 fw-bold btn btn text-light my-1"
-                      >
-                        Korzinka
-                      </button> */}
+    //               <h6>{item.NameBook}</h6>
+    //               <div className="d-flex align-items-center ">
+    //                 <div>
+    //                   {/* <button
+    //                     onClick={() => korz(index)}
+    //                     style={{ backgroundColor: "rgb(225,106,0)" }}
+    //                     className="btn1 fw-bold btn btn text-light my-1"
+    //                   >
+    //                     Korzinka
+    //                   </button> */}
 
-                      <Link to={`/more/${item.id}/${item.NameBook}`}>
-                        <button className="btn1">
-                          Подробнее{" "}
-                          <b>
-                            <AiOutlineArrowRight />
-                          </b>
-                        </button>
-                      </Link>
-                      <BsFillStarFill className="star" />
-                      <b className="grade">{item.grade}</b>
-                    </div>
-                    <h3 className="like " onClick={() => like(index)}>
-                      {item.status2 == true ? (
-                        <AiOutlineHeart />
-                      ) : (
-                        <AiFillHeart />
-                      )}
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  } else {
+    //                   <Link to={`/more/${item.id}/${item.NameBook}`}>
+    //                     <button className="btn1">
+    //                       Подробнее{" "}
+    //                       <b>
+    //                         <AiOutlineArrowRight />
+    //                       </b>
+    //                     </button>
+    //                   </Link>
+    //                   <BsFillStarFill className="star" />
+    //                   <b className="grade">{item.grade}</b>
+    //                 </div>
+    //                 <h3 className="like " onClick={() => like(index)}>
+    //                   {item.status2 == true ? (
+    //                     <AiOutlineHeart />
+    //                   ) : (
+    //                     <AiFillHeart />
+    //                   )}
+    //                 </h3>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         );
+    //       })}
+    //     </div>
+    //   </div>
+    // );
+  // } else {
     return (
       <div className="d-flex justify-content-center">
         <div className="d-flex mainnn">
@@ -184,7 +184,7 @@ const Card = () => {
         </div>
       </div>
     );
-  }
+  // }
 };
 
 export default Card;
