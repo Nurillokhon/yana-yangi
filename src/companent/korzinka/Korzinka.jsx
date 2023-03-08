@@ -1,12 +1,14 @@
 import React from "react";
+import { useDispatch, useSelector } from 'react-redux';
 
 const Korzinka = () => {
-  const massiv = JSON.parse(localStorage.getItem("count"));
-  console.log(massiv, "nimadir");
+  // const massiv = JSON.parse(localStorage.getItem("count"));
+  const qiymat = useSelector((state) => state);
+
   return (
     <div>
       korzinaga tushgan mahsulotlar
-      {massiv.map((item, index) => {
+      {qiymat.data.map((item, index) => {
         if (item.status == false) {
           return (
             <div className="d-flex align-items-center">
