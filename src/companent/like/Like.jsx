@@ -1,29 +1,29 @@
-import React from "react";
-import './like.css'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+
 
 const Like = () => {
-  const massiv = JSON.parse(localStorage.getItem("count"));
+    // const massiv = JSON.parse(localStorage.getItem('count'))
+    const qiymat = useSelector((state) => state);
 
-  return (
-    <div>
-            <div className="container">
-              <div className="row">
-      {massiv.map((item, index) => {
-        if (item.status2 == false) {
-          return (
-                <div className="col-4">
-                  <div className="card  my-3 mx-3 text-center">
-                    <img width={364} height={400} className='img' src={item.ImgBook} alt="" />
-                    <h4 className="p-3">{item.NameBook}</h4>
-                  </div>
-                </div>
-          );
-        }
-    })}
-    </div>
-  </div>
-    </div>
-  );
-};
+    return (
+        <div>
+            {
+                qiymat.data.map((item, index) => {
+                    if (item.status2 == false) {
+                        return (
+                            <div className='d-flex align-items-center'>
+                                <img width={200} src={item.ImgBook} alt="" />
+                            <h1>{item.NameBook}</h1>
+                            </div>
+                        )
+                    }
+                    
+                })
+            }
+        </div>
+    );
+}
 
 export default Like;
