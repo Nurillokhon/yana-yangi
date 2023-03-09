@@ -22,7 +22,7 @@ const Sign = () => {
           name: Name,
           email: Email,
           password: Password,
-          Number: Number,
+          Number: Number
         });
         setBorder2("white");
         setBorder("white");
@@ -43,11 +43,11 @@ const Sign = () => {
   return (
     <div className="body">
       <div className="vhods">
-        <h2 className="sign">Регистрация</h2>
+        <h2 className="sign">Registration</h2>
         <input
           className="inp1"
           type="text"
-          placeholder="Введите Имию и Фамилию"
+          placeholder="Enter First Name and Last Name"
           onInput={(val) => {
             setName(val.target.value);
           }}
@@ -57,7 +57,7 @@ const Sign = () => {
         <input
           className="inp1"
           type="text"
-          placeholder="Введите Почту"
+          placeholder="Enter Mail"
           onInput={(val) => {
             setEmail(val.target.value);
           }}
@@ -66,7 +66,7 @@ const Sign = () => {
         <input
           className="inp1"
           type="text"
-          placeholder="Введите свой номер телефона"
+          placeholder="Enter your phone number"
           onInput={(val) => {
             setNumber(val.target.value);
           }}
@@ -76,30 +76,30 @@ const Sign = () => {
         <input
           className="inp1"
           type="password"
-          placeholder="Введите Пароль"
+          placeholder="Enter password"
           onInput={(val) => {
             setPassword(val.target.value);
           }}
           style={{
             border: `3px solid ${border}`,
-            border: `3px solid ${border2}`,
+            border: `3px solid ${border2}`
           }}
         />
         <br />
         <input
           className="inp1"
           type="password"
-          placeholder="Введите Пароль ещё раз"
+          placeholder="Enter Password again"
           onInput={(val) => {
             setPassword2(val.target.value);
           }}
           style={{
             border: `3px solid ${border}`,
-            border: `3px solid ${border2}`,
+            border: `3px solid ${border2}`
           }}
         />
         <button className="btns" onClick={Yuborish}>
-          Зарегистрироваться
+          Register
         </button>
       </div>
     </div>

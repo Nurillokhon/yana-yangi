@@ -47,7 +47,7 @@ const Navbar = () => {
       <ul className="nav_ul">
         <li>Stoc</li>
         <li>
-          <a href="#cotolog">Catalog</a>{" "}
+          <a href="#cotolog">Catalog</a>
         </li>
         <li>Deleviriy</li>
         <li>About store</li>

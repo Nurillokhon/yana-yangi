@@ -3,19 +3,19 @@
   padding-top: 5%;
   color: rgb(76, 41, 0);
   font-family: cursive;
-  height: 300px;
+  height: 400px;
 }
 .col1 {
   padding-top: 40px;
 }
-.hover1 {
+/* .hover1 {
   transition: all ease-in-out 0.1s;
 }
 .hover1:hover {
   border-bottom: 3px solid grey;
   padding-bottom: 20px;
   padding-top: 2px;
-}
+} */
 .hots {
   color: gray;
   transition: 700ms;

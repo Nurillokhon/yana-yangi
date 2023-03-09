@@ -38,8 +38,8 @@ const Footer = () => {
             <span>Business</span>
           </div>
           <div className="col-2">
-            <p>+38 (071) 339-16-26</p>
-            <button className="button1">Request a call</button>
+            <p>+998 93 134 33 77</p>
+            <a href="tel:931343377"><button className="button1">Request a call</button></a>
           </div>
         </div>
       </div>

@@ -67,7 +67,7 @@ const Card = () => {
       <div className="d-flex mainnn">
         {qiymat.data.map((item, index) => {
           return (
-            <div className="car">
+            <div>
               <div
                 className=" mx-3 card p-3 shadow "
                 style={{ border: "none" }}

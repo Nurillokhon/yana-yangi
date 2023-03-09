@@ -120,28 +120,28 @@ const Login = () => {
   return (
     <div className="body">
       <div className="vhod">
-        <h2 className="sign">Вход</h2>
+        <h2 className="sign">Entrance</h2>
         <input
           onInput={(val) => setVal1(val.target.value)}
           className="inp1"
           type="text"
-          placeholder="Введите почту"
+          placeholder="Enter your email"
         />
         <br />
         <input
           onInput={(val) => setVal2(val.target.value)}
           className="inp1"
           type="text"
-          placeholder="Введите пароль"
+          placeholder="enter password"
         />
-        <p className="zabil">Забыли свой пароль?</p>
+        <p className="zabil">Forgot your password?</p>
         <button onClick={Tekshirish} className="btns">
-          {Loading ? "Загрузка" : "Войти в профиль"}
+          {Loading ? "Loading" : "Login to profile"}
         </button>
         <p className="zabil">
-          Ещё не прошли регитсрацию?{" "}
+          Haven't registered yet?{" "}
           <Link to="/sign" style={{ textDecoration: "none", color: "orange" }}>
-            <span>Зарегистрироваться</span>
+            <span>Register</span>
           </Link>
         </p>
       </div>
