@@ -54,7 +54,7 @@ function MyApp() {
       {qiymat.data.map((item, index) => {
         if (item.id == params.id) {
           return (
-            <div className="row g-0" key={index}>
+            <div className="row row2 g-0" key={index}>
               <div className="col-6 ">
                 <img className="img1" src={item.ImgBook} alt="Book Img" />
               </div>
@@ -64,7 +64,7 @@ function MyApp() {
                 </h1>
                 <h2>{item.price} so'm</h2>
                 {/* <h3 style={{ color: "black", marginTop: "50px" }}>Рейтинг:</h3> */}
-                <Raiting />
+                <Raiting/>
                 <ul>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />

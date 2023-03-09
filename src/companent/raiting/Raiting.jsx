@@ -16,8 +16,12 @@ function getLabelText(value) {
 }
 
 export default function HoverRating() {
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
   const [hover, setHover] = React.useState(-1);
+
+  function Ishla(params) {
+    console.log(params);
+  }
 
   return (
     <Box
@@ -34,11 +38,12 @@ export default function HoverRating() {
         getLabelText={getLabelText}
         onChange={(event, newValue) => {
           setValue(newValue);
+          Ishla(newValue)
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);
         }}
-        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+        emptyIcon={<StarIcon   style={{ opacity: 0.55 }} fontSize="inherit" />}
       />
       {value !== null && (
         <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
