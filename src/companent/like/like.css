@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 300px;
 }
-.col-4{
+.col_main{
     text-align: center;
     border: 3px solid orange;
     border-radius: 25px;

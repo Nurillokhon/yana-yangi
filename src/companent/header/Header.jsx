@@ -3,53 +3,59 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Card from "../card/Card";
 import Katalog from "../katalog/Katalog";
-import './header.css';
+import "./header.css";
+import { BsInstagram } from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";
+import { FaTwitter } from "react-icons/fa";
+import { SlSocialVkontakte } from "react-icons/sl";
+import { BsYoutube } from "react-icons/bs";
 
 const Header = () => {
   const qiymat = useSelector((state) => state);
   const dispatch = useDispatch();
   const [mas, setMas] = useState([]);
   useEffect(() => {
-    axios.get("https://6407167c862956433e63966f.mockapi.io/Data")
+    axios
+      .get("https://6407167c862956433e63966f.mockapi.io/Data")
       .then((ress) => {
-        setMas(ress.data)
-        dispatch({type:"YuborApini" , payload:ress.data})
+        setMas(ress.data);
+        dispatch({ type: "YuborApini", payload: ress.data });
       })
 
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  function Fan(){
-    let nimadir = mas.filter(item=>{
-      return item.category.includes("Fantastika")
-    })
-    console.log(nimadir,'bu nimadir');
+  function Fan() {
+    let nimadir = mas.filter((item) => {
+      return item.category.includes("Fantastika");
+    });
+    console.log(nimadir, "bu nimadir");
     dispatch({ type: "Fantastik", payload: { name: nimadir } });
   }
 
-  function Det(){
-    let nimadir = mas.filter(item=>{
-      return item.category.includes("Detektiv")
-    })
+  function Det() {
+    let nimadir = mas.filter((item) => {
+      return item.category.includes("Detektiv");
+    });
     dispatch({ type: "Detektiv", payload: { name: nimadir } });
   }
 
-  function Self(){
-    let nimadir = mas.filter(item=>{
-      return item.category.includes("Rivojlanish")
-    })
+  function Self() {
+    let nimadir = mas.filter((item) => {
+      return item.category.includes("Rivojlanish");
+    });
     dispatch({ type: "Rivojlanish", payload: { name: nimadir } });
   }
 
-  function boshqa(){
-    let nimadir = mas.filter(item=>{
-      return item.category.includes("Boshqa")
-    })
+  function boshqa() {
+    let nimadir = mas.filter((item) => {
+      return item.category.includes("Boshqa");
+    });
     dispatch({ type: "Boshqa", payload: { name: nimadir } });
   }
 
-  function hamma(){
+  function hamma() {
     dispatch({ type: "hamma" });
   }
   {
@@ -161,6 +167,23 @@ const Header = () => {
             <h3 className="py-5 mt-5 fw-bold" id="delive">
               Follow us on social networks
             </h3>
+            <div className="d-flex justify-content-center pb-5">
+              <h1 className="px-1">
+                <BsFacebook />
+              </h1>
+              <h1 className="px-1">
+                <FaTwitter />
+              </h1>
+              <h1 className="px-1">
+                <SlSocialVkontakte />
+              </h1>
+              <h1 className="px-1">
+                <BsInstagram />
+              </h1>
+              <h1 className="px-1">
+                <BsYoutube />
+              </h1>
+            </div>
           </div>
         </div>
       </>
