@@ -45,13 +45,13 @@ const Navbar = () => {
         />
       </Link>
       <ul className="nav_ul">
-        <li>Stoc</li>
+        <li><a href="#card">Stoc</a></li>
         <li>
           <a href="#cotolog">Catalog</a>
         </li>
-        <li>Deleviriy</li>
-        <li>About store</li>
-        <li>Blog</li>
+        <li><a href="#del">Delivery</a></li>
+        <li><a href="#about">About store</a></li>
+        <li><a href="#blog">Blog</a></li>
       </ul>
       <input
         placeholder="serach book"

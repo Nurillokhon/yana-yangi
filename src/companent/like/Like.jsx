@@ -23,7 +23,7 @@ const Like = () => {
                                   height={400}
                                   className="img"
                                   src={item.ImgBook}
-                                  alt=""
+                                  alt="rasm"
                                 />
                                 <h4 className="p-3">{item.NameBook}</h4>
                               </div>
@@ -34,7 +34,6 @@ const Like = () => {
                 })}
                 </div>
                </div>
-            
         </div>
     );
 }

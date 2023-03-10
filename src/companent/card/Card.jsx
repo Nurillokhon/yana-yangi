@@ -19,7 +19,7 @@ const Card = () => {
       .get("https://api.npoint.io/f6b5513c4c86229c5195")
       .then((ress) => {
         setMas(ress.data);
-        dispatch({ type: "added2", payload: { mass: ress.data } });
+        // dispatch({ type: "added2", payload: { mass: ress.data } });
         // localStorage.setItem("count1", JSON.stringify(ress.data));
         // localStorage.setItem("count", JSON.stringify(ress.data));
         korz();
