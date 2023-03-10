@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import './like.css'
 
 
 
@@ -9,19 +10,30 @@ const Like = () => {
 
     return (
         <div>
-            {
-                qiymat.data.map((item, index) => {
+            
+               <div className='container'>
+                <div className="row">
+                {qiymat.data.map((item, index) => {
                     if (item.status2 == false) {
                         return (
-                            <div className='d-flex align-items-center'>
-                                <img width={200} src={item.ImgBook} alt="" />
-                            <h1>{item.NameBook}</h1>
+                            <div className="col-4">
+                              <div className="card card1  my-3 mx-3 text-center">
+                                <img
+                                  width={365}
+                                  height={400}
+                                  className="img"
+                                  src={item.ImgBook}
+                                  alt="rasm"
+                                />
+                                <h4 className="p-3">{item.NameBook}</h4>
+                              </div>
                             </div>
-                        )
+                          );
                     }
                     
-                })
-            }
+                })}
+                </div>
+               </div>
         </div>
     );
 }

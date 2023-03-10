@@ -3,7 +3,7 @@ import './katalog.css'
 const Katalog = () => {
     return (
         <div className='container text-center'>
-            <h2 className='fw-bold my-5' id='cotolog'>Katalog</h2>
+            <h2 className='fw-bold my-5' id='cotolog'>Catalog</h2>
             <div className='row cat'>
                 <div className='card col p-4 m-3 shadow fw-bold text-secondary'>Kitoblar</div>
                 <div className='card col p-4 m-3 shadow fw-bold text-secondary'>Electronniy kitob</div>

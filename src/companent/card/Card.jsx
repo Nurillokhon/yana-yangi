@@ -19,7 +19,7 @@ const Card = () => {
       .get("https://6407167c862956433e63966f.mockapi.io/Data")
       .then((ress) => {
         setMas(ress.data);
-        dispatch({ type: "added2", payload: { mass: ress.data } });
+        // dispatch({ type: "added2", payload: { mass: ress.data } });
         // localStorage.setItem("count1", JSON.stringify(ress.data));
         // localStorage.setItem("count", JSON.stringify(ress.data));
         korz();

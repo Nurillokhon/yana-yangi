@@ -43,7 +43,8 @@ position: absolute;
   max-width: 90%;
   overflow-x: scroll;
   padding-top: 80px;
-  height: 100vh;
+  height: 60vh;
+  height: 60vh;
 }
 
 .mainnn::-webkit-scrollbar {

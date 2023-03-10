@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./card2.css";
 import { BsFillStarFill } from "react-icons/bs";
-import {AiOutlineCheckCircle} from 'react-icons/ai'
+import { AiOutlineCheckCircle } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import Button from "@mui/material/Button";
 import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
-import Raiting from '../raiting/Raiting'
+import Raiting from "../raiting/Raiting";
 // LEARN MORE
 
 const Card2 = () => {
@@ -39,22 +39,20 @@ const Card2 = () => {
     }
   }
 
-function MyApp() {
-  const { enqueueSnackbar } = useSnackbar();
+  function MyApp() {
+    const { enqueueSnackbar } = useSnackbar();
 
-  const handleClick = () => {
-    enqueueSnackbar("I love snacks.");
-  };
-
-
-}
+    const handleClick = () => {
+      enqueueSnackbar("I love snacks.");
+    };
+  }
 
   return (
     <div>
       {qiymat.data.map((item, index) => {
         if (item.id == params.id) {
           return (
-            <div className="row g-0" key={index}>
+            <div className="row row2 g-0" key={index}>
               <div className="col-6 ">
                 <img className="img1" src={item.ImgBook} alt="Book Img" />
               </div>
@@ -68,26 +66,26 @@ function MyApp() {
                 <ul>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>БЕСПЛАТНЫЙ ВОЗВРАТ</b>
+                    <b>FREE RETURN</b>
                   </li>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>ПОТСТАВЛЯЕТСЯ С ПАКЕТОМ</b>
+                    <b>SUPPLIED WITH PACKAGE</b>
                   </li>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>ЧАТ С НАМИ 24ЧАСА</b>
+                    <b>CHAT WITH US 24H</b>
                   </li>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>РАБОЧЕЕ ВРЕМЯ 24/7</b>
+                    <b>WORKING HOURS 24/7</b>
                   </li>
                 </ul>
                 <button className="btn2">
-                  <b>КУПИТЬ СЕЙЧАС</b>
+                  <b>BUY NOW</b>
                 </button>
                 <button className="btn3" onClick={() => korz(index)}>
-                  <b>ДОБАВИТЬ В КОРЗИНУ</b>
+                  <b>ADD TO BASKET</b>
                 </button>
 
                 <SnackbarProvider maxSnack={3}>
