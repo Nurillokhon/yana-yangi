@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./card2.css";
-import { BsFillStarFill } from "react-icons/bs";
-import { AiOutlineCheckCircle } from "react-icons/ai";
-import { useSelector } from "react-redux";
-import Button from "@mui/material/Button";
-import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
-import Raiting from "../raiting/Raiting";
+import {AiOutlineCheckCircle} from 'react-icons/ai'
+import { useSelector ,useDispatch} from "react-redux";
+import { SnackbarProvider, useSnackbar } from "notistack";
+import Raiting from '../raiting/Raiting'
 // LEARN MORE
 
 const Card2 = () => {
   const params = useParams();
   const [mas, setMas] = useState([]);
   const qiymat = useSelector((state) => state);
+  const dispatch = useDispatch()
 
   useEffect(() => {
     axios
@@ -28,24 +27,27 @@ const Card2 = () => {
   }, []);
 
   function korz(index) {
-    if (qiymat.data.length > 0) {
-      let current = [...qiymat.data];
-      current[index].status = !current[index].status;
-      localStorage.setItem("count", JSON.stringify(current));
-    } else {
-      let current = [...mas];
-      current[index].status = !current[index].status;
-      localStorage.setItem("count", JSON.stringify(current));
-    }
+    // if (qiymat.data.length > 0) {
+    //   let current = [...qiymat.data];
+    //   current[index].status = !current[index].status;
+    //   // localStorage.setItem("count", JSON.stringify(current));
+    // } else {
+    //   let current = [...mas];
+    //   current[index].status = !current[index].status;
+    //   // localStorage.setItem("count", JSON.stringify(current));
+    // }
+    dispatch({ type: "kor", payload :{index:index}});
   }
 
-  function MyApp() {
-    const { enqueueSnackbar } = useSnackbar();
+function MyApp() {
+  const { enqueueSnackbar } = useSnackbar();
 
-    const handleClick = () => {
-      enqueueSnackbar("I love snacks.");
-    };
-  }
+  const handleClick = () => {
+    enqueueSnackbar("I love snacks.");
+  };
+
+
+}
 
   return (
     <div>
@@ -62,30 +64,30 @@ const Card2 = () => {
                 </h1>
                 <h2>{item.price} so'm</h2>
                 {/* <h3 style={{ color: "black", marginTop: "50px" }}>Рейтинг:</h3> */}
-                <Raiting style={{Paramis:params}} />
+                <Raiting state={params} />
                 <ul>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>FREE RETURN</b>
+                    <b>БЕСПЛАТНЫЙ ВОЗВРАТ</b>
                   </li>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>SUPPLIED WITH PACKAGE</b>
+                    <b>ПОТСТАВЛЯЕТСЯ С ПАКЕТОМ</b>
                   </li>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>CHAT WITH US 24H</b>
+                    <b>ЧАТ С НАМИ 24ЧАСА</b>
                   </li>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />
-                    <b>WORKING HOURS 24/7</b>
+                    <b>РАБОЧЕЕ ВРЕМЯ 24/7</b>
                   </li>
                 </ul>
                 <button className="btn2">
-                  <b>BUY NOW</b>
+                  <b>КУПИТЬ СЕЙЧАС</b>
                 </button>
                 <button className="btn3" onClick={() => korz(index)}>
-                  <b>ADD TO BASKET</b>
+                  <b>ДОБАВИТЬ В КОРЗИНУ</b>
                 </button>
 
                 <SnackbarProvider maxSnack={3}>

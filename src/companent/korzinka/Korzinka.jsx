@@ -7,31 +7,21 @@ const Korzinka = () => {
 
   return (
     <div>
-            
-               <div className='container'>
-                <div className="row">
-                {qiymat.data.map((item, index) => {
-                    if (item.status2 == false) {
-                        return (
-                            <div className="col-4">
-                              <div className="card card1  my-3 mx-3 text-center">
-                                <img
-                                  width={365}
-                                  height={400}
-                                  className="img"
-                                  src={item.ImgBook}
-                                  alt="rasm"
-                                />
-                                <h4 className="p-3">{item.NameBook}</h4>
-                              </div>
-                            </div>
-                          );
-                    }
-                    
-                })}
-                </div>
-               </div>
-        </div>
+      <h1 style={{textAlign:"center"}}>
+       
+        <b>Korzinka</b>
+      </h1>
+      {qiymat.data.map((item, index) => {
+        if (item.status == false) {
+          return (
+            <div className="d-flex align-items-center">
+              <img width={200} src={item.ImgBook} alt="" />
+              <h1>{item.NameBook}</h1>
+            </div>
+          );
+        }
+      })}
+    </div>
   );
 };
 

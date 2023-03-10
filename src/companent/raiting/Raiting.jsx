@@ -1,4 +1,4 @@
-import  React , {useEffect} from "react";
+import * as React from "react";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
@@ -18,21 +18,17 @@ function getLabelText(value) {
 
 export default function HoverRating(props) {
   const [value, setValue] = React.useState(0);
-  const [hover, setHover] = React.useState(-1);
-  console.log(props.style.Paramis.id);
+  const [hover, setHover] = React.useState(-1)
+  console.log(props.state.id);
 
   function Ishla(params) {
-     axios.put(`https://6407167c862956433e63966f.mockapi.io/Data/${props.style.Paramis.id}`,
-         {
-           grade: params,
-         }
-       )
-       .then((res) => {
-         console.log(res);
-       })
-       .catch((error)=>{
-        console.log(error);
-       })
+    axios.put(`https://6407167c862956433e63966f.mockapi.io/Data/${props.state.id}`,{
+      grade:params
+    })
+    .then((res)=>{
+      console.log(res.data);
+    })
+    // console.log(params);
   }
 
   return (

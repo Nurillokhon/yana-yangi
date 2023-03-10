@@ -4,6 +4,8 @@
     background-size: cover;
     height: 30vh;
     color: white;
+    position:relative;
+    bottom:0 ;
 }
 .img{
     border-radius: 50%;

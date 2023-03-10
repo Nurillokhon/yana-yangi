@@ -22,7 +22,7 @@ const Card = () => {
         // dispatch({ type: "added2", payload: { mass: ress.data } });
         // localStorage.setItem("count1", JSON.stringify(ress.data));
         // localStorage.setItem("count", JSON.stringify(ress.data));
-        korz();
+        // korz();
       })
       .catch((err) => {
         console.log(err);
@@ -32,7 +32,7 @@ const Card = () => {
 
   function like(index) {
     // if (qiymat.data.length > 0) {
-    //   let current = [...qiymat.data];
+    //   let current = [...qiymat.data];]u8kijylkiukijulj   n    
 
     //   current[index].status2 = !current[index].status2;
     //   setMas(current);
@@ -48,19 +48,7 @@ const Card = () => {
     dispatch({ type: "like", payload: { index: index } });
   }
 
-  function korz(index) {
-    // if (qiymat.data.length > 0) {
-    //   let current = [...qiymat.data];
-    //   current[index].status = !current[index].status;
-    //   localStorage.setItem("count", JSON.stringify(current));
-    // }
-    // else{
-    //   let current = [...mas];
-    //   current[index].status = !current[index].status;
-    //   localStorage.setItem("count", JSON.stringify(current));
-    // }
-    dispatch({ type: "kor", payload: { index: index } });
-  }
+
 
   return (
     <div id="card" className="d-flex justify-content-center">
