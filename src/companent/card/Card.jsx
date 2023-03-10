@@ -16,7 +16,7 @@ const Card = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.npoint.io/f6b5513c4c86229c5195")
+      .get("https://6407167c862956433e63966f.mockapi.io/Data")
       .then((ress) => {
         setMas(ress.data);
         dispatch({ type: "added2", payload: { mass: ress.data } });

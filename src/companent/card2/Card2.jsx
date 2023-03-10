@@ -17,7 +17,7 @@ const Card2 = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.npoint.io/f6b5513c4c86229c5195")
+      .get("https://6407167c862956433e63966f.mockapi.io/Data")
       .then((ress) => {
         setMas(ress.data);
         console.log(ress.data, "ress");
@@ -64,7 +64,7 @@ function MyApp() {
                 </h1>
                 <h2>{item.price} so'm</h2>
                 {/* <h3 style={{ color: "black", marginTop: "50px" }}>Рейтинг:</h3> */}
-                <Raiting />
+                <Raiting style={{Paramis:params}} />
                 <ul>
                   <li>
                     <AiOutlineCheckCircle className="galochka" />

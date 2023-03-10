@@ -1,7 +1,8 @@
-import * as React from "react";
+import  React , {useEffect} from "react";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
+import axios from "axios";
 
 const labels = {
   1: "1",
@@ -15,12 +16,23 @@ function getLabelText(value) {
   return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
 }
 
-export default function HoverRating() {
+export default function HoverRating(props) {
   const [value, setValue] = React.useState(0);
   const [hover, setHover] = React.useState(-1);
+  console.log(props.style.Paramis.id);
 
   function Ishla(params) {
-    console.log(params);
+     axios.put(`https://6407167c862956433e63966f.mockapi.io/Data/${props.style.Paramis.id}`,
+         {
+           grade: params,
+         }
+       )
+       .then((res) => {
+         console.log(res);
+       })
+       .catch((error)=>{
+        console.log(error);
+       })
   }
 
   return (
